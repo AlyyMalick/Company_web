@@ -7,37 +7,35 @@
 //     justify-content: center;
 //     align-items: center;
 //     text-align: center;
-  
+
 //     .hero-content {
 //       background-color: rgba(0, 0, 0, 0.6);
 //       color: var(--secondary-color); // Use the secondary color defined in your project
-  
+
 //       padding: 20px;
 //       border-radius: 10px;
 //     }
-  
+
 //     .hero-heading {
 //       font-size: 2rem;
 //       font-weight: bold;
 //       margin: 0;
 //       line-height: 1.2;
-  
+
 //       @media screen and (min-width: 768px) {
 //         font-size: 3rem;
 //       }
 //     }
-  
+
 //     .hero-subheading {
 //       font-size: 1rem;
 //       margin-top: 20px;
-  
+
 //       @media screen and (min-width: 768px) {
 //         font-size: 1.2rem;
 //       }
 //     }
 //   }
-
-
 
 // Header.scss
 // .app__header {
@@ -64,7 +62,6 @@
 //   }
 // }
 
-
 // Header.scss
 .app__header {
   width: 100%;
@@ -72,8 +69,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url(); // Replace with your background image
+  background-image: url("../../../public/hero.jpg");
   background-size: cover;
+  background-position: center;
 
   .app__header-content {
     text-align: center;
