@@ -3,46 +3,42 @@ import { motion } from "framer-motion";
 // import React from "react";
 import { images } from "../../Constants";
 import { AppWrap } from "../../wrapper";
-import { urlFor, client } from '../../client';
-
-
+import { urlFor, client } from "../../client";
 
 import "./About.scss";
 
-// const abouts = [
-//   {
-//     title: "Web Development",
-//     description: "We have the best web developers.",
-//     imgUrl: images.about01,
-//   },
-//   {
-//     title: "React Native Developer",
-//     description:
-//       "We have the best React Native developers with a passion for building beautiful mobile applications.",
-//     imgUrl: images.about02,
-//   },
-//   {
-//     title: "UI/UX",
-//     description: "Professionals in User Interface and User Experience.",
-//     imgUrl: images.about03,
-//   },
-//   {
-//     title: "Data Engineering",
-//     description: "We have the best Data Engineers.",
-//     imgUrl: images.about04,
-//   },
-// ];
+const abouts = [
+  {
+    title: "Web Development",
+    description: "We have the best web developers.",
+    imgUrl: images.about01,
+  },
+  {
+    title: "React Native Developer",
+    description:
+      "We have the best React Native developers with a passion for building beautiful mobile applications.",
+    imgUrl: images.about02,
+  },
+  {
+    title: "UI/UX",
+    description: "Professionals in User Interface and User Experience.",
+    imgUrl: images.about03,
+  },
+  {
+    title: "Data Engineering",
+    description: "We have the best Data Engineers.",
+    imgUrl: images.about04,
+  },
+];
 
 const About = () => {
-  const [ abouts, setAbouts ] = useState([]);
+  // const [abouts, setAbouts] = useState([]);
 
-  useEffect(() => {
-    const query = '*[_type == "abouts"]';
+  // useEffect(() => {
+  //   const query = '*[_type == "abouts"]';
 
-    client.fetch(query)
-      .then((data) => setAbouts(data))
-  }, []);
-  
+  //   client.fetch(query).then((data) => setAbouts(data));
+  // }, []);
 
   return (
     <>
