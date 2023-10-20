@@ -51,4 +51,4 @@ const Header = () => {
   );
 };
 
-export default AppWrap(Header, "home");
+export default Header;
