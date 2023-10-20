@@ -117,21 +117,16 @@
 //   'app__whitebg',
 // );
 
-
-
-
-
-
-import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import ReactTooltip from 'react-tooltip';
+import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import ReactTooltip from "react-tooltip";
 import { images } from "../../Constants";
-import { AppWrap } from '../../wrapper';
-import { urlFor, client } from '../../client';
-import './Skills.scss';
+import { AppWrap } from "../../wrapper";
+import { urlFor, client } from "../../client";
+import "./Skills.scss";
 
 // Define a function to get the skills with image URLs
-const getSkills = () => [
+const hardcodedSkills = [
   {
     title: "Web Development",
     imgUrl: images.cpp,
@@ -154,19 +149,89 @@ const getSkills = () => [
   },
 ];
 
-const Skills = () => {
-  const [experiences, setExperiences] = useState([]);
-  
-  // Fetch experiences from your database, if needed
-  useEffect(() => {
-    const query = '*[_type == "experiences"]';
-    client.fetch(query).then((data) => {
-      setExperiences(data);
-    });
-  }, []);
+const hardcodedExperiences = [
+  {
+    year: "2021",
+    works: [
+      {
+        name: "Rooftop Living",
+        //imgSrc: "url-to-image1.jpg", // Replace with the image URL
+        desc: "Web Application",
+      },
+      // {
+      //   name: "BetterHomes",
+      //   //imgSrc: "url-to-image2.jpg", // Replace with the image URL
+      //   desc: "Mobile application",
+      // },
+      // {
+      //   name: "uown",
+      //   //imgSrc: "url-to-image2.jpg", // Replace with the image URL
+      //   desc: "Mobile application",
+      // },
+      // Add more work experiences as needed
+    ],
+  },
+  {
+    year: "2022",
+    works: [
+      // {
+      //   name: "Rooftop Living",
+      //   //imgSrc: "url-to-image1.jpg", // Replace with the image URL
+      //   desc: "Web Application",
+      // },
+      {
+        name: "BetterHomes",
+        //imgSrc: "url-to-image2.jpg", // Replace with the image URL
+        desc: "Mobile application",
+      },
+      // {
+      //   name: "uown",
+      //   //imgSrc: "url-to-image2.jpg", // Replace with the image URL
+      //   desc: "Mobile application",
+      // },
+      // Add more work experiences as needed
+    ],
+  },
+  {
+    year: "2022",
+    works: [
+      // {
+      //   name: "Rooftop Living",
+      //   //imgSrc: "url-to-image1.jpg", // Replace with the image URL
+      //   desc: "Web Application",
+      // },
+      // {
+      //   name: "BetterHomes",
+      //   //imgSrc: "url-to-image2.jpg", // Replace with the image URL
+      //   desc: "Mobile application",
+      // },
+      {
+        name: "uown",
+        //imgSrc: "url-to-image2.jpg", // Replace with the image URL
+        desc: "Mobile application",
+      },
+      // Add more work experiences as needed
+    ],
+  },
+  // Add more experiences as needed
+];
 
-  // Use the getSkills function to retrieve the skills
-  const skills = getSkills();
+const Skills = () => {
+  const skills = hardcodedSkills;
+  const experiences = hardcodedExperiences;
+
+  // const [experiences, setExperiences] = useState([]);
+
+  // // Fetch experiences from your database, if needed
+  // useEffect(() => {
+  //   const query = '*[_type == "experiences"]';
+  //   client.fetch(query).then((data) => {
+  //     setExperiences(data);
+  //   });
+  // }, []);
+
+  // // Use the getSkills function to retrieve the skills
+  // const skills = getSkills();
 
   return (
     <>
@@ -174,12 +239,12 @@ const Skills = () => {
 
       <div className="app__skills-container">
         <motion.div className="app__skills-list">
-          {skills.map((skill) => (
+          {skills.map((skill, index) => (
             <motion.div
               whileInView={{ opacity: [0, 1] }}
               transition={{ duration: 0.5 }}
               className="app__skills-item app__flex"
-              key={skill.title}
+              key={index}
             >
               <div
                 className="app__flex"
@@ -192,16 +257,13 @@ const Skills = () => {
           ))}
         </motion.div>
         <div className="app__skills-exp">
-          {experiences.map((experience) => (
-            <motion.div
-              className="app__skills-exp-item"
-              key={experience.year}
-            >
+          {experiences.map((experience, index) => (
+            <motion.div className="app__skills-exp-item" key={index}>
               <div className="app__skills-exp-year">
                 <p className="bold-text">{experience.year}</p>
               </div>
               <motion.div className="app__skills-exp-works">
-                {experience.works.map((work) => (
+                {experience.works.map((work, workIndex) => (
                   <>
                     <motion.div
                       whileInView={{ opacity: [0, 1] }}
@@ -209,10 +271,11 @@ const Skills = () => {
                       className="app__skills-exp-work"
                       data-tip
                       data-for={work.name}
-                      key={work.name}
+                      key={workIndex}
                     >
+                      {/* <img src={work.imgSrc} alt={work.name} /> */}
                       <h4 className="bold-text">{work.name}</h4>
-                      <p className="p-text">{work.company}</p>
+                      <p className="p-text">{work.desc}</p>
                     </motion.div>
                     {/* <ReactTooltip
                       id={work.name}
@@ -233,4 +296,4 @@ const Skills = () => {
   );
 };
 
-export default Skills ;
+export default Skills;
