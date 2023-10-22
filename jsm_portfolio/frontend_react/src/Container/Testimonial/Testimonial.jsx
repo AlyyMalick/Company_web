@@ -12,16 +12,25 @@ const Testimonial = () => {
   // Define hardcoded testimonial data
   const testimonials = [
     {
-      name: "John Doe",
-      company: "ABC Inc.",
-      feedback: "Great service!",
+      name: "RoofTop Living",
+      company: "ROOFTOP LIVING",
+      feedback:
+        "PROJJEXX helped us with our property management system and made sure all of our systems ran seamlessly and efficiently from front to back. Friendly, talented professionals and very responsive",
       imgurl: images.Client1, // Replace with the image URL
     },
     {
-      name: "Jane Smith",
-      company: "XYZ Corp.",
-      feedback: "Excellent work!",
+      name: "Haris @ UOWN",
+      company: "UOWN",
+      feedback:
+        "PROJJEXX completely revolutionised our IOS and android app. The team was great at taking our thoughts and idea and implanting them quickly. Osman managed the whole process smoothly and I would definitley trust him and team again for future work.",
       imgurl: images.Client2, // Replace with the image URL
+    },
+    {
+      name: "BetterHomes",
+      company: "BetterHomes Real Estate",
+      feedback:
+        "We are a new Real Estate business based in the North of England. The guys at PROJJEXX helped oversee and manage the creation of our website and property management system. We look forward to working with you guys again in the future.",
+      imgurl: images.Client3, // Replace with the image URL
     },
     // Add more testimonial objects as needed
   ];
@@ -78,6 +87,12 @@ const Testimonial = () => {
                   <h5 className="p-text">
                     {testimonials[currentIndex].company}
                   </h5>
+                  <div className="icon">
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                  </div>
                 </div>
               </div>
             </div>

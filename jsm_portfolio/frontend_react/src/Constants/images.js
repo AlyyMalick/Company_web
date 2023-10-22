@@ -36,9 +36,11 @@ import skype from "../assets/skype.png";
 import spotify from "../assets/spotify.png";
 import Client1 from "../assets/Client1.jpg";
 import Client2 from "../assets/Client2.jpg";
+import Client3 from "../assets/Client3.jpg";
 export default {
   Client1,
   Client2,
+  Client3,
   email,
   mobile,
   api,

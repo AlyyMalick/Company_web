@@ -1,3 +1,5 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+
 .main {
   display: flex; /* Use flexbox */
   justify-content: center; /* Center horizontally */
@@ -165,4 +167,13 @@
   @media screen and (max-width: 800px) {
     width: 100%;
   }
+}
+.fa-star.checked {
+  color: gold;
+}
+
+.icon {
+  font-size: 34px;
+  color: blue;
+  margin-bottom: 10px;
 }

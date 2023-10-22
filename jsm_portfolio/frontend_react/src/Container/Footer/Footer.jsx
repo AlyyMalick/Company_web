@@ -40,7 +40,9 @@ const Footer = () => {
   return (
     <div className="app__center">
       <div className="hh">
-        <h2 className="head-text">Take a coffee & chat with me</h2>
+        <h2 className="head-text">
+          Grab a coffee and let’s meet to solve your problems
+        </h2>
       </div>
 
       <div className="app__footer-cards">

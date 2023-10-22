@@ -2,15 +2,15 @@ import React, { useState, useEffect } from "react";
 import "./Skills.scss";
 
 const industryIcons = {
-  Health: 'fa fa-heart',
-  Education: 'fa fa-graduation-cap',
-  Finance: 'fa fa-dollar',
-  Transport: 'fa fa-car',
-  Technology: 'fa fa-laptop',
-  Telcomm: 'fa fa-phone',
-  Energy: 'fa fa-bolt',
-  Realstate: 'fa fa-building',
-  Retail: 'fa fa-shopping-cart',
+  Health: "fa fa-heart",
+  Education: "fa fa-graduation-cap",
+  "Finance & Fintech": "fa fa-dollar",
+  Transport: "fa fa-car",
+  "Technology & Startups": "fa fa-laptop",
+  Telcommunication: "fa fa-phone",
+  Energy: "fa fa-bolt",
+  "Real Estate": "fa fa-building",
+  Retail: "fa fa-shopping-cart",
 };
 
 const Skills = () => {
@@ -29,7 +29,6 @@ const Skills = () => {
       </div>
     </div>
   );
-}
+};
 
 export default Skills;
-

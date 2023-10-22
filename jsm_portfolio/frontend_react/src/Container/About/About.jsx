@@ -10,23 +10,26 @@ import "./About.scss";
 const abouts = [
   {
     title: "Web Development",
-    description: "We have the best web developers.",
+    description:
+      "Bespoke, fast, functional and agile. There are no limits to what we can create to help you reach your full potential.",
     imgUrl: images.about01,
   },
   {
-    title: "React Native Developer",
+    title: "App Development",
     description:
-      "We have the best React Native developers with a passion for building beautiful mobile applications.",
+      "We craft apps to match your exact vision and business needs. Intuitive and eye-catching interfaces leveraging the latest tech.",
     imgUrl: images.about02,
   },
   {
     title: "SEO",
-    description: "Hire best professionals for ranking your websites.",
+    description:
+      "In the digital age, visibility on search engines is the key to success. Our services cut out the competition and put you at the forefront",
     imgUrl: images.about03,
   },
   {
     title: "Data Engineering",
-    description: "We have the best Data Engineers.",
+    description:
+      "We thrive on solving complex data challenges and crafting custom solutions. Data Integration, Robust Data Pipelines, Data Warehousing and Big Data Expertise",
     imgUrl: images.about04,
   },
 ];
@@ -43,11 +46,11 @@ const About = () => {
   return (
     <>
       <h2 className="head-text">
-        I know that
-        <span>Good Buisness</span>
-        <br />
-        means
-        <span>good Business</span>
+        We specialise in the digital realm, serving as your comprehensive
+        solution for web development, app development, and SEO services and data
+        engineering. Our integrated digital services are here to
+        {/* <br /> */}
+        <span> empower your business</span>
       </h2>
       <div className="app__profiles ">
         {abouts.map((about, index) => (

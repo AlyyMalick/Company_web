@@ -63,16 +63,6 @@
 
 // export default Work;
 
-
-
-
-
-
-
-
-
-
-
 // import React, { useState, useEffect } from 'react';
 // import { AiFillEye, AiFillGithub } from 'react-icons/ai';
 // import { motion } from 'framer-motion';
@@ -104,7 +94,6 @@
 //     imgUrl: images.about04,
 //   },
 // ];
-
 
 // const Work = () => {
 //   const [works, setWorks] = useState([]);
@@ -216,34 +205,32 @@
 // //   'app__primarybg',
 // // );
 
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import { images } from "../../Constants";
+import { AppWrap } from "../../wrapper";
 
-
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { images } from '../../Constants';
-import { AppWrap } from '../../wrapper';
-
-import './Work.scss';
+import "./Work.scss";
 
 const work = [
   {
-    title: 'Web Development',
-    description: 'We have the best web developers.',
+    title: "Web Development",
+    description: "We have the best web developers.",
     imgUrl: images.about01,
   },
   {
-    title: 'React Native Developer',
-    description: 'We have developers for  applications.',
+    title: "App Development",
+    description: "We have best developers for  applications.",
     imgUrl: images.about02,
   },
   {
-    title: 'UI/UX',
-    description: 'Professionals in User Experience.',
+    title: "SEO",
+    description: "Professionals in Ranking of Websites.",
     imgUrl: images.about03,
   },
   {
-    title: 'Data Engineering',
-    description: 'We have the best Data Engineers.',
+    title: "Data Engineering",
+    description: "We have the best Data Engineers.",
     imgUrl: images.about04,
   },
 ];
@@ -251,11 +238,11 @@ const work = [
 const Work = () => {
   return (
     <>
-      <h2 className="head-text">My Creative <span>Portfolio</span> Section</h2>
+      <h2 className="head-text">
+        Our Creative <span>Portfolio</span> Section
+      </h2>
 
-      <motion.div
-        className="app__work-portfolio"
-      >
+      <motion.div className="app__work-portfolio">
         {work.map((workItem, index) => (
           <div className="app__work-item app__flex" key={index}>
             <div className="app__work-img app__flex">
@@ -264,7 +251,9 @@ const Work = () => {
 
             <div className="app__work-content app__flex">
               <h4 className="bold-text">{workItem.title}</h4>
-              <p className="p-text" style={{ marginTop: 10 }}>{workItem.description}</p>
+              <p className="p-text" style={{ marginTop: 10 }}>
+                {workItem.description}
+              </p>
 
               {/* You can add other content here if needed... */}
             </div>
