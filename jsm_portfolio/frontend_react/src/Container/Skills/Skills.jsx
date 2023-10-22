@@ -1,299 +1,35 @@
-// import React, { useState, useEffect } from 'react';
-// import { motion } from 'framer-motion';
-// import ReactTooltip from 'react-tooltip';
-
-// import { AppWrap, MotionWrap } from '../../wrapper';
-// import { urlFor, client } from '../../client';
-// import './Skills.scss';
-
-// const skills = [
-//   {
-//     title: "Web Development",
-//     imgUrl: images.cpp,
-//   },
-//   {
-//     title: "React Native Developer",
-//     imgUrl: images.css,
-//   },
-//   {
-//     title: "UI/UX",
-//     imgUrl: images.figma,
-//   },
-//   {
-//     title: "Data Engineering",
-//     imgUrl: images.flutter,
-//   },
-//   {
-//     title: "Data Engineering",
-//     imgUrl: images.git,
-//   },
-// ];
-
-// const Skills = () => {
-//   const [experiences, setExperiences] = useState([]);
-//   const [skills, setSkills] = useState([]);
-
-//   useEffect(() => {
-//     const query = '*[_type == "experiences"]';
-//     const skillsQuery = '*[_type == "skills"]';
-
-//     client.fetch(query).then((data) => {
-//       setExperiences(data);
-//     });
-
-//     client.fetch(skillsQuery).then((data) => {
-//       setSkills(data);
-//     });
-//   }, []);
-
-//   return (
-//     <>
-//       <h2 className="head-text">Skills & Experiences</h2>
-
-//       <div className="app__skills-container">
-//         <motion.div className="app__skills-list">
-//           {skills.map((skill) => (
-//             <motion.div
-//               whileInView={{ opacity: [0, 1] }}
-//               transition={{ duration: 0.5 }}
-//               className="app__skills-item app__flex"
-//               key={skill.name}
-//             >
-//               <div
-//                 className="app__flex"
-//                 style={{ backgroundColor: skill.bgColor }}
-//               >
-//                 <img src={urlFor(skill.icon)} alt={skill.name} />
-//               </div>
-//               <p className="p-text">{skill.name}</p>
-//             </motion.div>
-//           ))}
-//         </motion.div>
-//         <div className="app__skills-exp">
-//           {experiences.map((experience) => (
-//             <motion.div
-//               className="app__skills-exp-item"
-//               key={experience.year}
-//             >
-//               <div className="app__skills-exp-year">
-//                 <p className="bold-text">{experience.year}</p>
-//               </div>
-//               <motion.div className="app__skills-exp-works">
-//                 {experience.works.map((work) => (
-//                   <>
-//                     <motion.div
-//                       whileInView={{ opacity: [0, 1] }}
-//                       transition={{ duration: 0.5 }}
-//                       className="app__skills-exp-work"
-//                       data-tip
-//                       data-for={work.name}
-//                       key={work.name}
-//                     >
-//                       <h4 className="bold-text">{work.name}</h4>
-//                       <p className="p-text">{work.company}</p>
-//                     </motion.div>
-//                     <ReactTooltip
-//                       id={work.name}
-//                       effect="solid"
-//                       arrowColor="#fff"
-//                       className="skills-tooltip"
-//                     >
-//                       {work.desc}
-//                     </ReactTooltip>
-//                   </>
-//                 ))}
-//               </motion.div>
-//             </motion.div>
-//           ))}
-//         </div>
-//       </div>
-//     </>
-//   );
-// };
-
-// export default AppWrap(
-//   MotionWrap(Skills, 'app__skills'),
-//   'skills',
-//   'app__whitebg',
-// );
-
 import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
-import ReactTooltip from "react-tooltip";
-import { images } from "../../Constants";
-import { AppWrap } from "../../wrapper";
-import { urlFor, client } from "../../client";
 import "./Skills.scss";
 
-// Define a function to get the skills with image URLs
-const hardcodedSkills = [
-  {
-    title: "Web Development",
-    imgUrl: images.cpp,
-  },
-  {
-    title: "React Native Developer",
-    imgUrl: images.css,
-  },
-  {
-    title: "UI/UX",
-    imgUrl: images.figma,
-  },
-  {
-    title: "Data Engineering",
-    imgUrl: images.flutter,
-  },
-  {
-    title: "Data Engineering",
-    imgUrl: images.git,
-  },
-];
-
-const hardcodedExperiences = [
-  {
-    year: "2021",
-    works: [
-      {
-        name: "Rooftop Living",
-        //imgSrc: "url-to-image1.jpg", // Replace with the image URL
-        desc: "Web Application",
-      },
-      // {
-      //   name: "BetterHomes",
-      //   //imgSrc: "url-to-image2.jpg", // Replace with the image URL
-      //   desc: "Mobile application",
-      // },
-      // {
-      //   name: "uown",
-      //   //imgSrc: "url-to-image2.jpg", // Replace with the image URL
-      //   desc: "Mobile application",
-      // },
-      // Add more work experiences as needed
-    ],
-  },
-  {
-    year: "2022",
-    works: [
-      // {
-      //   name: "Rooftop Living",
-      //   //imgSrc: "url-to-image1.jpg", // Replace with the image URL
-      //   desc: "Web Application",
-      // },
-      {
-        name: "BetterHomes",
-        //imgSrc: "url-to-image2.jpg", // Replace with the image URL
-        desc: "Mobile application",
-      },
-      // {
-      //   name: "uown",
-      //   //imgSrc: "url-to-image2.jpg", // Replace with the image URL
-      //   desc: "Mobile application",
-      // },
-      // Add more work experiences as needed
-    ],
-  },
-  {
-    year: "2022",
-    works: [
-      // {
-      //   name: "Rooftop Living",
-      //   //imgSrc: "url-to-image1.jpg", // Replace with the image URL
-      //   desc: "Web Application",
-      // },
-      // {
-      //   name: "BetterHomes",
-      //   //imgSrc: "url-to-image2.jpg", // Replace with the image URL
-      //   desc: "Mobile application",
-      // },
-      {
-        name: "uown",
-        //imgSrc: "url-to-image2.jpg", // Replace with the image URL
-        desc: "Mobile application",
-      },
-      // Add more work experiences as needed
-    ],
-  },
-  // Add more experiences as needed
-];
-
-const Skills = () => {
-  const skills = hardcodedSkills;
-  const experiences = hardcodedExperiences;
-
-  // const [experiences, setExperiences] = useState([]);
-
-  // // Fetch experiences from your database, if needed
-  // useEffect(() => {
-  //   const query = '*[_type == "experiences"]';
-  //   client.fetch(query).then((data) => {
-  //     setExperiences(data);
-  //   });
-  // }, []);
-
-  // // Use the getSkills function to retrieve the skills
-  // const skills = getSkills();
-
-  return (
-    <>
-      <h2 className="head-text">Skills & Experiences</h2>
-
-      <div className="app__skills-container">
-        <motion.div className="app__skills-list">
-          {skills.map((skill, index) => (
-            <motion.div
-              whileInView={{ opacity: [0, 1] }}
-              transition={{ duration: 0.5 }}
-              className="app__skills-item app__flex"
-              key={index}
-            >
-              <div
-                className="app__flex"
-                style={{ backgroundColor: skill.bgColor }}
-              >
-                <img src={skill.imgUrl} alt={skill.title} />
-              </div>
-              <p className="p-text">{skill.title}</p>
-            </motion.div>
-          ))}
-        </motion.div>
-        <div className="app__skills-exp">
-          {experiences.map((experience, index) => (
-            <motion.div className="app__skills-exp-item" key={index}>
-              <div className="app__skills-exp-year">
-                <p className="bold-text">{experience.year}</p>
-              </div>
-              <motion.div className="app__skills-exp-works">
-                {experience.works.map((work, workIndex) => (
-                  <>
-                    <motion.div
-                      whileInView={{ opacity: [0, 1] }}
-                      transition={{ duration: 0.5 }}
-                      className="app__skills-exp-work"
-                      data-tip
-                      data-for={work.name}
-                      key={workIndex}
-                    >
-                      {/* <img src={work.imgSrc} alt={work.name} /> */}
-                      <h4 className="bold-text">{work.name}</h4>
-                      <p className="p-text">{work.desc}</p>
-                    </motion.div>
-                    {/* <ReactTooltip
-                      id={work.name}
-                      effect="solid"
-                      arrowColor="#fff"
-                      className="skills-tooltip"
-                    >
-                      {work.desc}
-                    </ReactTooltip> */}
-                  </>
-                ))}
-              </motion.div>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    </>
-  );
+const industryIcons = {
+  Health: 'fa fa-heart',
+  Education: 'fa fa-graduation-cap',
+  Finance: 'fa fa-dollar',
+  Transport: 'fa fa-car',
+  Technology: 'fa fa-laptop',
+  Telcomm: 'fa fa-phone',
+  Energy: 'fa fa-bolt',
+  Realstate: 'fa fa-building',
+  Retail: 'fa fa-shopping-cart',
 };
 
+const Skills = () => {
+  return (
+    <div className="container">
+      <h2>Featured Industries</h2>
+      <div className="row">
+        {Object.keys(industryIcons).map((industry) => (
+          <div className="col-md-4 col-sm-6" key={industry}>
+            <div className="box">
+              <i className={`icon ${industryIcons[industry]}`}></i>
+              <p>{industry}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export default Skills;
+
