@@ -8,8 +8,8 @@ app.use(bodyParser.json());
 const transporter = nodemailer.createTransport({
   service: "Gmail",
   auth: {
-    user: "m.hasanzubair01@gmail.com",
-    pass: "mkrh viyh tmmn wgkk",
+    user: "osman@projjexx.co",
+    pass: "gmpm wfij rfju eqsw",
   },
 });
 
@@ -18,7 +18,7 @@ app.post("/send-email", (req, res) => {
 
   const mailOptions = {
     from: "your-email@gmail.com",
-    to: "m.hasanzubair01@gmail.com",
+    to: "osman@projjexx.co",
     subject: "New Contact Form Submission",
     text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
   };
