@@ -20,8 +20,8 @@ const abouts = [
     imgUrl: images.about02,
   },
   {
-    title: "UI/UX",
-    description: "Professionals in User Interface and User Experience.",
+    title: "SEO",
+    description: "Hire best professionals for ranking your websites.",
     imgUrl: images.about03,
   },
   {
