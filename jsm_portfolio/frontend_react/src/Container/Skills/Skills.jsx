@@ -15,7 +15,7 @@ const industryIcons = {
 
 const Skills = () => {
   return (
-    <div className="container">
+    <div id="industry" className="container">
       <h2>Featured Industries</h2>
       <div className="row">
         {Object.keys(industryIcons).map((industry) => (

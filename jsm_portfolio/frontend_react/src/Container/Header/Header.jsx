@@ -36,7 +36,7 @@ import "./Header.scss";
 import { AppWrap } from "../../wrapper";
 const Header = () => {
   return (
-    <header className="app__header">
+    <header id="home" className="app__header">
       <div className="app__header-content">
         <h1>
           Transform Your Business <br />

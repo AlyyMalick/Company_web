@@ -38,7 +38,7 @@ const Footer = () => {
   };
 
   return (
-    <div className="app__center">
+    <div id="contact" className="app__center">
       <div className="hh">
         <h2 className="head-text">
           Grab a coffee and let’s meet to solve your problems

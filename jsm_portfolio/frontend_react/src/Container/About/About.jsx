@@ -44,7 +44,7 @@ const About = () => {
   // }, []);
 
   return (
-    <>
+    <div id="about">
       <h2 className="head-text">
         We specialise in the digital realm, serving as your comprehensive
         solution for web development, app development, and SEO services and data
@@ -71,7 +71,7 @@ const About = () => {
           </motion.div>
         ))}
       </div>
-    </>
+    </div>
   );
 };
 
