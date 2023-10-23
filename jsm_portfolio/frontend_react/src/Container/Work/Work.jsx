@@ -237,7 +237,7 @@ const work = [
 
 const Work = () => {
   return (
-    <>
+    <div id="work">
       <h2 className="head-text">
         Our Creative <span>Portfolio</span> Section
       </h2>
@@ -260,7 +260,7 @@ const Work = () => {
           </div>
         ))}
       </motion.div>
-    </>
+    </div>
   );
 };
 

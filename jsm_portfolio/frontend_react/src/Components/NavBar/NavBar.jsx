@@ -5,14 +5,25 @@ import "./NavBar.scss";
 import { images } from "../../Constants";
 const NavBar = () => {
   const [toggle, setToggle] = useState(false);
+  const handleScrollToSection = (id) => {
+    const targetSection = document.getElementById(id);
+    if (targetSection) {
+      // Scroll to the target section with smooth behavior
+      targetSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
     <nav className="app__navbar">
       <div className="app__navbar-logo">
         <img src={images.logo} alt="logo" />
       </div>
       <ul className="app__navbar-links">
-        {["home", "about", "work", "skills", "contact"].map((item) => (
-          <li className="app__flex p-text" key={`link-${item}`}>
+        {["home", "about", "work", "industry", "contact"].map((item) => (
+          <li
+            className="app__flex p-text"
+            key={`link-${item}`}
+            onClick={() => handleScrollToSection(item)}
+          >
             <div />
             <a href={`#${item}`}>{item}</a>
           </li>
