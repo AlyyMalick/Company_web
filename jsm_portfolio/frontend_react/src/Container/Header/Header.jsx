@@ -43,7 +43,7 @@ const Header = () => {
           With Cutting-Edge Software
         </h1>
         <h3>
-          boost productivity and efficiency with our innovative <br /> software
+          Boost productivity and efficiency with our innovative <br /> software
           solutions. Let us take your <br /> business to the next level
         </h3>
       </div>

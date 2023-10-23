@@ -46,11 +46,10 @@ const About = () => {
   return (
     <div id="about">
       <h2 className="head-text">
-        We specialise in the digital realm, serving as your comprehensive
-        solution for web development, app development, and SEO services and data
-        engineering. Our integrated digital services are here to
         {/* <br /> */}
-        <span> empower your business</span>
+        <span>
+          Our integrated digital services are here to empower your business
+        </span>
       </h2>
       <div className="app__profiles ">
         {abouts.map((about, index) => (
