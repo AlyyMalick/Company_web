@@ -1,9 +1,18 @@
 const express = require("express");
 const nodemailer = require("nodemailer");
 const bodyParser = require("body-parser");
+const cors = require("cors");
 
 const app = express();
 app.use(bodyParser.json());
+app.use(
+  cors({
+    origin: "https://www.projjexx.com",
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    allowedHeaders: "Content-Type,Authorization",
+    credentials: true, // enable set cookie
+  })
+);
 
 const transporter = nodemailer.createTransport({
   service: "Gmail",

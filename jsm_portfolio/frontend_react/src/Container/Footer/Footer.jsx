@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
 import { images } from "../../Constants";
-import { AppWrap, MotionWrap } from "../../wrapper";
-import { client } from "../../client";
+//import { AppWrap, MotionWrap } from "../../wrapper";
+//import { client } from "../../client";
 import "./Footer.scss";
 import axios from "axios";
 const Footer = () => {

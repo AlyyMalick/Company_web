@@ -33,7 +33,7 @@
 // Header.jsx
 import React from "react";
 import "./Header.scss";
-import { AppWrap } from "../../wrapper";
+//import { AppWrap } from "../../wrapper";
 const Header = () => {
   return (
     <header id="home" className="app__header">

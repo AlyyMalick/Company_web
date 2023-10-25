@@ -5,7 +5,6 @@ import {
   Header,
   Skills,
   Testimonial,
-  Work,
   MFooter,
 } from "./Container";
 import { NavBar } from "./Components";
@@ -16,7 +15,7 @@ const App = () => {
       <NavBar />
       <Header />
       <About />
-      <Work />
+      {/* <Work /> */}
       <Skills />
       <Testimonial />
       <Footer />
